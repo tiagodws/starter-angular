@@ -1,9 +1,9 @@
-import angular from 'angular';
-import 'angular-ui-router';
-import routesConfig from './routes';
+import angular from "angular";
+import "angular-ui-router";
+import routesConfig from "./routes";
 
-import './index.scss';
+import "./index.scss";
 
 angular
-    .module('app', ["ui.router"]
+    .module("app", ["ui.router"]
     );
