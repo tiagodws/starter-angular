@@ -6,6 +6,17 @@
     <title>Angular</title>
 </head>
 
-<body ng-app="app"></body>
+<body ng-app="app">
+    <div ng-controller="UserController">
+        <div ng-if="error">
+            <span>Error: {{error.message}}</span>
+        </div>
+        <div ng-if="user">
+            <p>Name: {{user.name}}</p>
+            <p>Username: {{user.username}}</p>
+            <img ng-src="{{user.avatar}}" title="{{user.name}}" />
+        </div>
+    </div>
+</body>
 
 </html>
