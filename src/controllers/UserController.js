@@ -1,9 +1,11 @@
-export default function UserController($scope, $http) {
+export default function UserController($http) {
     "ngInject";
 
+    const $ctrl = this;
+
     function loadUser(user) {
-        $scope.user = undefined;
-        $scope.error = undefined;
+        $ctrl.user = undefined;
+        $ctrl.error = undefined;
         return $http.get(`https://api.github.com/users/${user}`).then(onUserLoaded).catch(onUserError);
     }
 
@@ -14,7 +16,7 @@ export default function UserController($scope, $http) {
             username: data.login,
             avatar: data.avatar_url,
         };
-        $scope.user = user;
+        $ctrl.user = user;
     }
 
     function onUserError(response) {
@@ -22,7 +24,7 @@ export default function UserController($scope, $http) {
         const error = {
             message: data.message,
         };
-        $scope.error = error;
+        $ctrl.error = error;
     }
 
     loadUser("tiagodws");
