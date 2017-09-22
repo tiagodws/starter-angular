@@ -80,7 +80,7 @@ module.exports = env => {
             new webpack.optimize.ModuleConcatenationPlugin(),
             new ExtractTextPlugin(`${BUNDLE_NAME}.css`),
             new HtmlWebpackPlugin({
-                template: "index.ejs"
+                template: "index.html"
             }),
             new webpack.ProvidePlugin({
                 "locales": "locales",
