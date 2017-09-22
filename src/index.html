@@ -7,14 +7,14 @@
 </head>
 
 <body ng-app="app">
-    <div ng-controller="UserController">
-        <div ng-if="error">
-            <span>Error: {{error.message}}</span>
+    <div ng-controller="UserController as $ctrl">
+        <div ng-if="$ctrl.error">
+            <span>Error: {{$ctrl.error.message}}</span>
         </div>
-        <div ng-if="user">
-            <p>Name: {{user.name}}</p>
-            <p>Username: {{user.username}}</p>
-            <img ng-src="{{user.avatar}}" title="{{user.name}}" />
+        <div ng-if="$ctrl.user">
+            <p>Name: {{$ctrl.user.name}}</p>
+            <p>Username: {{$ctrl.user.username}}</p>
+            <img ng-src="{{$ctrl.user.avatar}}" title="{{$ctrl.user.name}}" />
         </div>
     </div>
 </body>
